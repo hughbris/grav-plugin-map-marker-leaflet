@@ -24,15 +24,6 @@ class MapMarkerLeafletPlugin extends Plugin
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths',0]
         ]);
-        //add assets
-        $assets = $this->grav['assets'];
-
-        $assets->registerCollection('leaflet', [
-            'plugin://map-marker-leaflet/assets/leaflet.js',
-            'plugin://map-marker-leaflet/assets/leaflet.css'
-        ]);
-
-        $assets->add('leaflet', 90);
     }
 
     public function onTwigTemplatePaths()

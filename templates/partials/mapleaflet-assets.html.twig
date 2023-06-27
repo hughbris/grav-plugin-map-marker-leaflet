@@ -1,0 +1,5 @@
+{# This is a nod to named asset collections, which are used in the upstream plugin and would be more elegant, except that the 'leaflet' collection registered there did not seem to be available anywhere else where I'd want it. Not sure why. #}
+{% do assets.add([
+    'plugin://map-marker-leaflet/assets/leaflet.js',
+    'plugin://map-marker-leaflet/assets/leaflet.css',
+    ]) %}

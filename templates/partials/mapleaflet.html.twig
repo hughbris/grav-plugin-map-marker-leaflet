@@ -1,4 +1,7 @@
 <div id="{{ mapname|raw }}" {% if classes %}class="{{ classes|raw }}"{% else %}style="width: {{ width|raw }}; height: {{ height|raw }};" {%endif %}></div>
+
+{% include 'partials/mapleaflet-assets.html.twig' %}
+
 <script>
 document.addEventListener('DOMContentLoaded', function(event) {
   var map = L.map('{{ mapname|raw }}').setView([{{ lat|raw }}, {{ lng|raw }}],{{ zoom|raw }});
