@@ -2,7 +2,7 @@
 
 {% include 'partials/mapleaflet-assets.html.twig' %}
 
-<script>
+{% script at 'bottom' %}
 document.addEventListener('DOMContentLoaded', function(event) {
   var map = L.map('{{ mapname|raw }}').setView([{{ lat|raw }}, {{ lng|raw }}],{{ zoom|raw }});
   L.tileLayer('{{ tilestanza|raw }}', {
@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     {% if variant %}, variant: "{{ variant|raw }}"{% endif %}
   }).addTo(map);
   {% if scale %}L.control.scale().addTo(map);{% endif %}
-{{ markercode|raw }}
+  {{ markercode|raw }}
 })
-</script>
+{% endscript %}
